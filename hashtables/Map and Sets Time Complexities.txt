@@ -1,0 +1,80 @@
+Understanding the time complexities of `Map` and `Set` operations in JavaScript is essential for writing efficient code. Below are the time complexities for common operations in `Map` and `Set`.
+
+### Map
+A `Map` is a collection of key-value pairs with average-case time complexities as follows:
+
+1. **Insertion (set)**
+   - **Operation**: `map.set(key, value)`
+   - **Time Complexity**: O(1)
+   
+2. **Deletion (delete)**
+   - **Operation**: `map.delete(key)`
+   - **Time Complexity**: O(1)
+   
+3. **Access (get)**
+   - **Operation**: `map.get(key)`
+   - **Time Complexity**: O(1)
+   
+4. **Search (has)**
+   - **Operation**: `map.has(key)`
+   - **Time Complexity**: O(1)
+   
+5. **Size**
+   - **Property**: `map.size`
+   - **Time Complexity**: O(1)
+   
+6. **Iteration**
+   - **Operations**: `map.keys()`, `map.values()`, `map.entries()`, `map.forEach(callback)`
+   - **Time Complexity**: O(n) where n is the number of elements in the map
+
+### Set
+A `Set` is a collection of unique values with average-case time complexities as follows:
+
+1. **Insertion (add)**
+   - **Operation**: `set.add(value)`
+   - **Time Complexity**: O(1)
+   
+2. **Deletion (delete)**
+   - **Operation**: `set.delete(value)`
+   - **Time Complexity**: O(1)
+   
+3. **Access (has)**
+   - **Operation**: `set.has(value)`
+   - **Time Complexity**: O(1)
+   
+4. **Size**
+   - **Property**: `set.size`
+   - **Time Complexity**: O(1)
+   
+5. **Iteration**
+   - **Operations**: `set.keys()`, `set.values()`, `set.entries()`, `set.forEach(callback)`
+   - **Time Complexity**: O(n) where n is the number of elements in the set
+
+### Summary
+
+#### Map Operations
+| Operation            | Method                   | Time Complexity |
+|----------------------|--------------------------|-----------------|
+| Insert               | `map.set(key, value)`    | O(1)            |
+| Delete               | `map.delete(key)`        | O(1)            |
+| Access (Get)         | `map.get(key)`           | O(1)            |
+| Search (Has)         | `map.has(key)`           | O(1)            |
+| Size                 | `map.size`               | O(1)            |
+| Iterate Keys         | `map.keys()`             | O(n)            |
+| Iterate Values       | `map.values()`           | O(n)            |
+| Iterate Entries      | `map.entries()`          | O(n)            |
+| Iterate with Callback| `map.forEach(callback)`  | O(n)            |
+
+#### Set Operations
+| Operation            | Method                   | Time Complexity |
+|----------------------|--------------------------|-----------------|
+| Insert               | `set.add(value)`         | O(1)            |
+| Delete               | `set.delete(value)`      | O(1)            |
+| Search (Has)         | `set.has(value)`         | O(1)            |
+| Size                 | `set.size`               | O(1)            |
+| Iterate Keys         | `set.keys()`             | O(n)            |
+| Iterate Values       | `set.values()`           | O(n)            |
+| Iterate Entries      | `set.entries()`          | O(n)            |
+| Iterate with Callback| `set.forEach(callback)`  | O(n)            |
+
+These time complexities assume average-case scenarios. In the worst-case scenario, if there are many hash collisions, the time complexity can degrade to O(n) for some operations. However, in practice, hash tables (which underlie `Map` and `Set`) are designed to handle collisions efficiently, so average-case complexities are typically O(1) for most operations.
