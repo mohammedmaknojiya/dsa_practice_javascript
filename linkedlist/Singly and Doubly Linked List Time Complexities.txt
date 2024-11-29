@@ -1,0 +1,142 @@
+### Singly Linked List
+
+A singly linked list is a data structure consisting of nodes where each node contains a value and a reference (or pointer) to the next node in the sequence. Here are the time complexities for common operations:
+
+1. **Insertion**:
+   - **At the beginning**: O(1)
+     ```plaintext
+     newNode.next = head
+     head = newNode
+     ```
+   - **At the end**: O(n) if the list does not maintain a tail pointer; O(1) if the list maintains a tail pointer
+     ```plaintext
+     if tail:
+         tail.next = newNode
+         tail = newNode
+     else:
+         traverse to the last node and set its next to newNode
+     ```
+   - **At a specific position**: O(n)
+     ```plaintext
+     traverse to the position and update pointers accordingly
+     ```
+
+2. **Deletion**:
+   - **At the beginning**: O(1)
+     ```plaintext
+     head = head.next
+     ```
+   - **At the end**: O(n) if the list does not maintain a tail pointer
+     ```plaintext
+     traverse to the second last node and set its next to null
+     ```
+   - **At a specific position**: O(n)
+     ```plaintext
+     traverse to the node before the position and update pointers accordingly
+     ```
+
+3. **Search**:
+   - **By value**: O(n)
+     ```plaintext
+     traverse the list until the value is found or the end is reached
+     ```
+
+4. **Access (get element at specific index)**: O(n)
+   ```plaintext
+   traverse the list until the index is reached
+   ```
+
+5. **Update (set element at specific index)**: O(n)
+   ```plaintext
+   traverse the list until the index is reached and update the value
+   ```
+
+### Doubly Linked List
+
+A doubly linked list is a data structure consisting of nodes where each node contains a value, a reference to the next node, and a reference to the previous node. Here are the time complexities for common operations:
+
+1. **Insertion**:
+   - **At the beginning**: O(1)
+     ```plaintext
+     newNode.next = head
+     newNode.prev = null
+     if head:
+         head.prev = newNode
+     head = newNode
+     ```
+   - **At the end**: O(1) if the list maintains a tail pointer
+     ```plaintext
+     newNode.prev = tail
+     newNode.next = null
+     if tail:
+         tail.next = newNode
+     tail = newNode
+     ```
+   - **At a specific position**: O(n)
+     ```plaintext
+     traverse to the position and update pointers accordingly
+     ```
+
+2. **Deletion**:
+   - **At the beginning**: O(1)
+     ```plaintext
+     head = head.next
+     if head:
+         head.prev = null
+     ```
+   - **At the end**: O(1) if the list maintains a tail pointer
+     ```plaintext
+     tail = tail.prev
+     if tail:
+         tail.next = null
+     ```
+   - **At a specific position**: O(n)
+     ```plaintext
+     traverse to the node and update pointers accordingly
+     ```
+
+3. **Search**:
+   - **By value**: O(n)
+     ```plaintext
+     traverse the list from the head until the value is found or the end is reached
+     ```
+
+4. **Access (get element at specific index)**: O(n)
+   ```plaintext
+   traverse the list until the index is reached
+   ```
+
+5. **Update (set element at specific index)**: O(n)
+   ```plaintext
+   traverse the list until the index is reached and update the value
+   ```
+
+### Summary
+
+#### Singly Linked List
+| Operation                    | Time Complexity |
+|------------------------------|-----------------|
+| Insertion at beginning       | O(1)            |
+| Insertion at end             | O(n) (O(1) if tail is maintained) |
+| Insertion at specific position| O(n)           |
+| Deletion at beginning        | O(1)            |
+| Deletion at end              | O(n) (O(1) if tail is maintained) |
+| Deletion at specific position| O(n)            |
+| Search by value              | O(n)            |
+| Access (get element)         | O(n)            |
+| Update (set element)         | O(n)            |
+
+#### Doubly Linked List
+| Operation                    | Time Complexity |
+|------------------------------|-----------------|
+| Insertion at beginning       | O(1)            |
+| Insertion at end             | O(1)            |
+| Insertion at specific position| O(n)           |
+| Deletion at beginning        | O(1)            |
+| Deletion at end              | O(1)            |
+| Deletion at specific position| O(n)            |
+| Search by value              | O(n)            |
+| Access (get element)         | O(n)            |
+| Update (set element)         | O(n)            |
+
+While singly linked lists are simpler and use less memory per node (one pointer), doubly linked lists offer more flexibility for operations at both ends of the list due to the additional backward pointer, often making them more efficient for insertions and deletions at the end of the list.
